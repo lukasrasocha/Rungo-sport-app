@@ -1,0 +1,7 @@
+{
+  "name": "Rungo-sport-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
