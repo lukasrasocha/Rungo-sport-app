@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import {SportService} from "../services/sport.service";
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  standalone: true,
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent]
 })
 export class HomePage {
-  constructor() {}
+  private sportService = inject(SportService);
+  constructor() {
+    this.loadMovie();
+  }
+
+  loadMovies() {
+    this.movieService.getTopRatedMovies().subscribe(movies) => {
+      console.log(movies);
+    });
+  }
 }
+
