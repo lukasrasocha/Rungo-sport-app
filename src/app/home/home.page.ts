@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import {SportService} from "../services/sport.service";
+import {MovieService} from "../services/movie.service";
 
 @Component({
   selector: 'app-home',
@@ -10,9 +10,9 @@ import {SportService} from "../services/sport.service";
   imports: [IonHeader, IonToolbar, IonTitle, IonContent]
 })
 export class HomePage {
-  private sportService = inject(SportService);
+  private movieService = inject(MovieService);
   constructor() {
-    this.loadMovie();
+    this.loadMovies();
   }
 
   loadMovies() {
