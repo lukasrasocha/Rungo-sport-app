@@ -10,11 +10,11 @@ const API_KEY = environment.apiKey
 @Injectable({
   providedIn: 'root'
 })
-export class movieService {
+export class MovieService {
   private http = inject(HttpClient);
   constructor() { }
 
-  getTopRatedMovies(page = 1): Observable<ApiResult> {
+  getTopRatedMovies(page?: string): Observable<ApiResult> {
     return this.http.get<ApiResult>(`${BASE_URL}/movie/popular?page=${page}&api_key=${API_KEY}`)
   }
 

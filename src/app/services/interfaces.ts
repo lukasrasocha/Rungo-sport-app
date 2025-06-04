@@ -1,4 +1,4 @@
-import Result = jasmine.Result;
+ import Result = jasmine.Result;
 
 export interface ApiResult {
   page: number;
